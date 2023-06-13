@@ -18,6 +18,7 @@ public class Routes {
         return RouterFunctions.route()
                 .GET("/endpoint", Handler::handleRequest)
                 .GET("/ping", Handler::handlePing)
+                .GET("/ping2", Handler::handlePing)
                 .build();
     }
 }
