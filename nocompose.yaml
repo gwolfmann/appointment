@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/compose-postgres
+      - 'POSTGRES_DB=appointment'
+      - 'POSTGRES_PASSWORD=pppgus'
+      - 'POSTGRES_USER=gwolfmann'
+    ports:
+      - '5432'
