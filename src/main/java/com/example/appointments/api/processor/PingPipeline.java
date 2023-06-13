@@ -4,7 +4,7 @@ package com.example.appointments.api.processor;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import reactor.core.publisher.Mono;
 
-public class PingPipeline extends PipelineFunctions {
+public class PingPipeline implements PipelineFunctions {
 
     @Override
     public Mono<String> getDataFromDB(ServerRequest request) {

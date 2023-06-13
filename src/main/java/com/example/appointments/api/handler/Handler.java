@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
+import reactor.util.context.Context;
 
 public abstract class Handler {
 
@@ -30,6 +31,7 @@ public abstract class Handler {
                 .flatMap(pipeline::mapToPresentation)
                 .flatMap(dtoToPresent ->
                         ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).bodyValue(dtoToPresent))
-                .onErrorResume(pipeline::handleErrorResponse);
+                .onErrorResume(pipeline::handleErrorResponse)
+                .contextWrite(Context.of("key","value");
     }
 }
